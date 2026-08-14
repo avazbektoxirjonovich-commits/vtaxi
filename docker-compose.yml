@@ -1,0 +1,51 @@
+services:
+  postgres:
+    image: postgres:16-alpine
+    restart: unless-stopped
+    environment:
+      POSTGRES_USER: vtaxi
+      POSTGRES_PASSWORD: vtaxi
+      POSTGRES_DB: vtaxi
+    ports:
+      - "5432:5432"
+    volumes:
+      - vtaxi_postgres_data:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U vtaxi"]
+      interval: 5s
+      timeout: 5s
+      retries: 10
+
+  redis:
+    image: redis:7-alpine
+    restart: unless-stopped
+    ports:
+      - "6379:6379"
+    volumes:
+      - vtaxi_redis_data:/data
+    healthcheck:
+      test: ["CMD", "redis-cli", "ping"]
+      interval: 5s
+      timeout: 5s
+      retries: 10
+
+  bot:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    restart: unless-stopped
+    env_file:
+      - .env
+    depends_on:
+      postgres:
+        condition: service_healthy
+      redis:
+        condition: service_healthy
+
+  # worker:
+  #   Reserved for the async background task queue (arq, see docs/01 ADR-009).
+  #   Enabled once Step 5 (Infrastructure) defines the worker entrypoint.
+
+volumes:
+  vtaxi_postgres_data:
+  vtaxi_redis_data:

@@ -1,0 +1,24 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 520" font-family="Segoe UI, Arial, sans-serif">
+  <rect width="640" height="520" fill="#FFFFFF"/>
+  <text x="320" y="32" text-anchor="middle" font-size="18" font-weight="700" fill="#16212C">VTaxi — Clean Architecture Layers</text>
+
+  <circle cx="320" cy="290" r="220" fill="#F4F5F2" stroke="#DCE0DA"/>
+  <circle cx="320" cy="290" r="165" fill="#EDEFEA" stroke="#DCE0DA"/>
+  <circle cx="320" cy="290" r="108" fill="#DCEEEE" stroke="#0B6E75"/>
+  <circle cx="320" cy="290" r="52"  fill="#122029" stroke="#0B6E75"/>
+
+  <text x="320" y="286" text-anchor="middle" font-size="11" fill="#FFFFFF" font-weight="600">domain</text>
+  <text x="320" y="302" text-anchor="middle" font-size="9"  fill="#9BADB8">entities, rules</text>
+
+  <text x="320" y="222" text-anchor="middle" font-size="11" fill="#16212C" font-weight="600">application</text>
+  <text x="320" y="238" text-anchor="middle" font-size="9"  fill="#55606B">services, ports</text>
+
+  <text x="320" y="160" text-anchor="middle" font-size="11" fill="#16212C" font-weight="600">infrastructure</text>
+  <text x="320" y="176" text-anchor="middle" font-size="9"  fill="#55606B">SQLAlchemy, repositories, UoW</text>
+
+  <text x="320" y="98" text-anchor="middle" font-size="11" fill="#16212C" font-weight="600">presentation</text>
+  <text x="320" y="114" text-anchor="middle" font-size="9"  fill="#93590A">bot / API / admin — not yet wired</text>
+
+  <text x="320" y="490" text-anchor="middle" font-size="10" fill="#8A939B">Dependencies point inward only: presentation → application → domain.</text>
+  <text x="320" y="506" text-anchor="middle" font-size="10" fill="#8A939B">infrastructure implements ports defined by application, never the reverse.</text>
+</svg>

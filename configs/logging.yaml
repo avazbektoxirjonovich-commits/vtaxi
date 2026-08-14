@@ -1,0 +1,31 @@
+version: 1
+disable_existing_loggers: false
+
+formatters:
+  default:
+    format: "%(asctime)s | %(levelname)-8s | %(name)s | %(message)s"
+    datefmt: "%Y-%m-%dT%H:%M:%S%z"
+
+handlers:
+  console:
+    class: logging.StreamHandler
+    formatter: default
+    stream: ext://sys.stdout
+
+root:
+  level: INFO
+  handlers: [console]
+
+loggers:
+  vtaxi:
+    level: INFO
+    handlers: [console]
+    propagate: false
+  sqlalchemy.engine:
+    level: WARNING
+    handlers: [console]
+    propagate: false
+  aiogram:
+    level: INFO
+    handlers: [console]
+    propagate: false

@@ -1,0 +1,55 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 780 460" font-family="Segoe UI, Arial, sans-serif">
+  <defs>
+    <marker id="a" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M0,0 L10,5 L0,10 z" fill="#8A939B"/>
+    </marker>
+  </defs>
+  <rect width="780" height="460" fill="#FFFFFF"/>
+  <text x="390" y="30" text-anchor="middle" font-size="18" font-weight="700" fill="#16212C">VTaxi — Database (core relationships)</text>
+  <text x="390" y="48" text-anchor="middle" font-size="10" fill="#55606B">21 tables total in the initial migration — core entities shown below</text>
+
+  <rect x="320" y="76" width="140" height="42" rx="8" fill="#122029" stroke="#0B6E75"/>
+  <text x="390" y="102" text-anchor="middle" font-size="12" fill="#FFFFFF" font-weight="600">users</text>
+
+  <rect x="150" y="150" width="150" height="42" rx="8" fill="#DCEEEE" stroke="#0B6E75"/>
+  <text x="225" y="176" text-anchor="middle" font-size="11" fill="#16212C" font-weight="600">driver_profiles</text>
+  <rect x="480" y="150" width="150" height="42" rx="8" fill="#DCEEEE" stroke="#0B6E75"/>
+  <text x="555" y="176" text-anchor="middle" font-size="11" fill="#16212C" font-weight="600">passenger_profiles</text>
+
+  <line x1="350" y1="118" x2="240" y2="150" stroke="#8A939B" stroke-width="1.5" marker-end="url(#a)"/>
+  <line x1="430" y1="118" x2="540" y2="150" stroke="#8A939B" stroke-width="1.5" marker-end="url(#a)"/>
+
+  <rect x="30" y="224" width="150" height="42" rx="8" fill="#F4F5F2" stroke="#DCE0DA"/>
+  <text x="105" y="250" text-anchor="middle" font-size="11" fill="#16212C" font-weight="600">vehicles</text>
+  <line x1="180" y1="245" x2="150" y2="192" stroke="#8A939B" stroke-width="1.5" marker-end="url(#a)"/>
+
+  <rect x="200" y="224" width="150" height="42" rx="8" fill="#F4F5F2" stroke="#DCE0DA"/>
+  <text x="275" y="250" text-anchor="middle" font-size="11" fill="#16212C" font-weight="600">driver_documents</text>
+
+  <rect x="380" y="224" width="150" height="42" rx="8" fill="#DCEEEE" stroke="#0B6E75"/>
+  <text x="455" y="250" text-anchor="middle" font-size="11" fill="#16212C" font-weight="600">bookings</text>
+  <line x1="225" y1="192" x2="440" y2="224" stroke="#8A939B" stroke-width="1.5" marker-end="url(#a)"/>
+  <line x1="555" y1="192" x2="470" y2="224" stroke="#8A939B" stroke-width="1.5" marker-end="url(#a)"/>
+
+  <rect x="560" y="224" width="160" height="42" rx="8" fill="#F4F5F2" stroke="#DCE0DA"/>
+  <text x="640" y="250" text-anchor="middle" font-size="11" fill="#16212C" font-weight="600">booking_status_history</text>
+  <line x1="530" y1="245" x2="560" y2="245" stroke="#8A939B" stroke-width="1.5" marker-end="url(#a)"/>
+
+  <line x1="455" y1="266" x2="455" y2="298" stroke="#8A939B" stroke-width="1.5" marker-end="url(#a)"/>
+  <rect x="380" y="298" width="150" height="42" rx="8" fill="#F4F5F2" stroke="#DCE0DA"/>
+  <text x="455" y="324" text-anchor="middle" font-size="11" fill="#16212C" font-weight="600">trips</text>
+
+  <rect x="200" y="298" width="150" height="42" rx="8" fill="#F4F5F2" stroke="#DCE0DA"/>
+  <text x="275" y="324" text-anchor="middle" font-size="11" fill="#16212C" font-weight="600">trip_passengers</text>
+  <line x1="380" y1="319" x2="350" y2="319" stroke="#8A939B" stroke-width="1.5" marker-end="url(#a)"/>
+
+  <rect x="560" y="298" width="150" height="42" rx="8" fill="#F4F5F2" stroke="#DCE0DA"/>
+  <text x="635" y="324" text-anchor="middle" font-size="11" fill="#16212C" font-weight="600">directions</text>
+  <line x1="530" y1="319" x2="560" y2="319" stroke="#8A939B" stroke-width="1.5" marker-end="url(#a)"/>
+
+  <rect x="560" y="372" width="150" height="42" rx="8" fill="#F4F5F2" stroke="#DCE0DA"/>
+  <text x="635" y="398" text-anchor="middle" font-size="11" fill="#16212C" font-weight="600">administrative_areas</text>
+  <line x1="635" y1="340" x2="635" y2="372" stroke="#8A939B" stroke-width="1.5" marker-end="url(#a)"/>
+
+  <text x="390" y="440" text-anchor="middle" font-size="10" fill="#8A939B">Also present: admin_profiles, audit_logs, notifications, vehicle_documents/photos, advertisements(+status_history), complaints, ratings, trip_status_history.</text>
+</svg>

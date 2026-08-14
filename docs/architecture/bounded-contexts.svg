@@ -1,0 +1,25 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 780 360" font-family="Segoe UI, Arial, sans-serif">
+  <rect width="780" height="360" fill="#FFFFFF"/>
+  <text x="390" y="32" text-anchor="middle" font-size="18" font-weight="700" fill="#16212C">VTaxi — Bounded Contexts</text>
+  <text x="390" y="52" text-anchor="middle" font-size="11" fill="#55606B">Teal = domain + application implemented · Grey = scaffolded only</text>
+
+  <g font-size="11" font-weight="600">
+    <rect x="30"  y="80" width="150" height="46" rx="8" fill="#DCEEEE" stroke="#0B6E75"/><text x="105" y="108" text-anchor="middle" fill="#16212C">booking</text>
+    <rect x="200" y="80" width="150" height="46" rx="8" fill="#DCEEEE" stroke="#0B6E75"/><text x="275" y="108" text-anchor="middle" fill="#16212C">identity</text>
+    <rect x="370" y="80" width="150" height="46" rx="8" fill="#DCEEEE" stroke="#0B6E75"/><text x="445" y="108" text-anchor="middle" fill="#16212C">trip</text>
+    <rect x="540" y="80" width="150" height="46" rx="8" fill="#DCEEEE" stroke="#0B6E75"/><text x="615" y="108" text-anchor="middle" fill="#16212C">vehicle</text>
+
+    <rect x="30"  y="150" width="150" height="42" rx="8" fill="#F4F5F2" stroke="#DCE0DA"/><text x="105" y="176" text-anchor="middle" fill="#55606B">payment</text>
+    <rect x="200" y="150" width="150" height="42" rx="8" fill="#F4F5F2" stroke="#DCE0DA"/><text x="275" y="176" text-anchor="middle" fill="#55606B">matching</text>
+    <rect x="370" y="150" width="150" height="42" rx="8" fill="#F4F5F2" stroke="#DCE0DA"/><text x="445" y="176" text-anchor="middle" fill="#55606B">geography</text>
+    <rect x="540" y="150" width="150" height="42" rx="8" fill="#F4F5F2" stroke="#DCE0DA"/><text x="615" y="176" text-anchor="middle" fill="#55606B">rating</text>
+
+    <rect x="30"  y="212" width="150" height="42" rx="8" fill="#F4F5F2" stroke="#DCE0DA"/><text x="105" y="238" text-anchor="middle" fill="#55606B">complaint</text>
+    <rect x="200" y="212" width="150" height="42" rx="8" fill="#F4F5F2" stroke="#DCE0DA"/><text x="275" y="238" text-anchor="middle" fill="#55606B">advertisement</text>
+    <rect x="370" y="212" width="150" height="42" rx="8" fill="#F4F5F2" stroke="#DCE0DA"/><text x="445" y="238" text-anchor="middle" fill="#55606B">notification</text>
+    <rect x="540" y="212" width="150" height="42" rx="8" fill="#F4F5F2" stroke="#DCE0DA"/><text x="615" y="238" text-anchor="middle" fill="#55606B">driver_verification</text>
+  </g>
+
+  <text x="390" y="290" text-anchor="middle" font-size="10" fill="#8A939B">Plus: audit_log, permission, geo_engine, queue_engine, search_engine, statistics — all scaffolded, no logic yet.</text>
+  <text x="390" y="308" text-anchor="middle" font-size="10" fill="#8A939B">Each context has its own domain/ and application/ package (Protocol-based ports, no cross-context imports).</text>
+</svg>

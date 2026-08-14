@@ -1,0 +1,101 @@
+[project]
+name = "vtaxi"
+version = "0.1.0"
+description = "VTaxi -- Telegram platform for intercity taxi booking (Namangan <-> Tashkent and beyond)."
+readme = "README.md"
+requires-python = ">=3.13,<3.14"
+license = { text = "Proprietary" }
+
+dependencies = [
+  "aiogram>=3.15,<4",
+  "sqlalchemy[asyncio]>=2.0,<3",
+  "asyncpg>=0.30",
+  "alembic>=1.14",
+  "pydantic>=2.9",
+  "pydantic-settings>=2.6",
+  "redis>=5.2",
+  "dishka>=1.4",
+  "arq>=0.26",
+  "pyyaml>=6.0",
+  "uuid6>=2025.0.1",
+]
+
+[dependency-groups]
+dev = [
+  "ruff>=0.8",
+  "black>=24.10",
+  "mypy>=1.13",
+  "pre-commit>=4.0",
+  "pytest>=8.3",
+  "pytest-asyncio>=0.24",
+  "types-pyyaml>=6.0",
+  "aiosqlite>=0.22.1",
+]
+
+[project.scripts]
+vtaxi = "vtaxi.main:run"
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/vtaxi"]
+
+# ---------------------------------------------------------------------------
+# Ruff: linting + import sorting. Formatting is delegated to Black (below),
+# so formatting-related rules are left to Black rather than `ruff format`.
+# ---------------------------------------------------------------------------
+[tool.ruff]
+target-version = "py313"
+line-length = 100
+extend-exclude = ["migrations/versions"]
+
+[tool.ruff.lint]
+select = ["E", "F", "I", "UP", "B", "SIM", "N", "ASYNC"]
+ignore = [
+  "E501", # line length is enforced by Black, not Ruff
+  # PEP 695 `class Foo[T]:` scopes T to that one class; this project shares
+  # one bound TypeVar (ModelT) across generic.py/base.py/protocols.py, which
+  # classic `Generic[T]` expresses directly and PEP 695 syntax cannot.
+  "UP046",
+]
+
+[tool.ruff.lint.isort]
+known-first-party = ["vtaxi"]
+
+[tool.ruff.lint.per-file-ignores]
+# `declared_attr`-decorated methods correctly take `cls`, not `self` -- ruff's
+# pep8-naming check doesn't know about this SQLAlchemy 2.0 decorator.
+"src/vtaxi/infrastructure/database/mixins/audit_mixin.py" = ["N805"]
+"src/vtaxi/infrastructure/database/models/vehicle.py" = ["N805"]
+
+# ---------------------------------------------------------------------------
+# Black: source formatter.
+# ---------------------------------------------------------------------------
+[tool.black]
+line-length = 100
+target-version = ["py313"]
+
+# ---------------------------------------------------------------------------
+# MyPy: static typing. Strict-ish -- every module must carry full type hints
+# per the project rules; loosened only for third-party stubs we don't control.
+# ---------------------------------------------------------------------------
+[tool.mypy]
+python_version = "3.13"
+strict = true
+warn_unused_ignores = true
+disallow_untyped_defs = true
+plugins = ["pydantic.mypy"]
+exclude = ["migrations/versions"]
+
+[[tool.mypy.overrides]]
+module = "arq.*"
+ignore_missing_imports = true
+
+# ---------------------------------------------------------------------------
+# Pytest
+# ---------------------------------------------------------------------------
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+asyncio_mode = "auto"
