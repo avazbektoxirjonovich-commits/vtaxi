@@ -29,6 +29,15 @@ VTaxi — Telegram asosidagi shaharlararo taksi buyurtma backend'i (Namangan ⇄
 | `presentation/api`, `presentation/admin_panel` | **Amalga oshirilmagan** — bo'sh paketlar |
 | Ma'lumotlar bazasi asosi | **Amalga oshirilgan va sinovdan o'tgan** — SQLAlchemy 2.0 async, Alembic (1 migratsiya) |
 
+## Demo
+
+Skrinshot olish uchun ishlaydigan UI yo'q — taqdimot qatlami hali ulanmagan (yuqoridagi jadvalga qarang). Buni o'ylab topish o'rniga, haqiqatan mavjud bo'lgan narsani hujjatlashtiruvchi to'rtta diagramma — har biri to'g'ridan-to'g'ri real koddan va real dastlabki migratsiya sxemasidan olingan (umumiy shablon emas):
+
+| | |
+|---|---|
+| [Clean Architecture qatlamlari](docs/architecture/clean-architecture.svg) | [Bounded context'lar](docs/architecture/bounded-contexts.svg) |
+| [Booking holat mashinasi](docs/architecture/booking-state-machine.svg) | [Baza ER diagrammasi](docs/architecture/database-er.svg) |
+
 ## Arxitektura
 
 [docs/architecture/clean-architecture.svg](docs/architecture/clean-architecture.svg), [docs/architecture/bounded-contexts.svg](docs/architecture/bounded-contexts.svg), [docs/architecture/booking-state-machine.svg](docs/architecture/booking-state-machine.svg) va [docs/architecture/database-er.svg](docs/architecture/database-er.svg) ga qarang.

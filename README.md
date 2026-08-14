@@ -29,6 +29,15 @@ VTaxi is a Telegram-based intercity taxi booking backend (starting with Namangan
 | `presentation/api`, `presentation/admin_panel` | **Not implemented** — empty packages |
 | Database foundation | **Implemented and tested** — SQLAlchemy 2.0 async, Alembic (1 migration) |
 
+## Demo
+
+There is no working UI to screenshot — the presentation layer isn't wired up (see the table above). Rather than fabricate one, here are the four diagrams that document what's actually there, each derived directly from the real code and the real initial migration schema (not a generic template):
+
+| | |
+|---|---|
+| [Clean Architecture layers](docs/architecture/clean-architecture.svg) | [Bounded contexts](docs/architecture/bounded-contexts.svg) |
+| [Booking state machine](docs/architecture/booking-state-machine.svg) | [Database ER diagram](docs/architecture/database-er.svg) |
+
 ## Architecture
 
 See [docs/architecture/clean-architecture.svg](docs/architecture/clean-architecture.svg), [docs/architecture/bounded-contexts.svg](docs/architecture/bounded-contexts.svg), [docs/architecture/booking-state-machine.svg](docs/architecture/booking-state-machine.svg), and [docs/architecture/database-er.svg](docs/architecture/database-er.svg).
